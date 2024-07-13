@@ -5,7 +5,11 @@ import Link from "next/link";
 import { Playfair_Display, Poppins } from "@next/font/google";
 import { Button } from "./ui/button";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import { Description, Dialog, DialogPanel, DialogTitle } from '@headlessui/react'
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 import ThemeChanger from "./ThemeChanger";
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -16,9 +20,7 @@ const poppins = Poppins({
   weight: ["600"],
 });
 
-
 const Header = () => {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   return (
     <header>
       <div className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
@@ -44,7 +46,7 @@ const Header = () => {
         <div className="flex my-4 mx-4">
           <div className="mx-1">
             <Button size="sm" variant="outline">
-              <ThemeChanger/>
+              <ThemeChanger />
             </Button>
           </div>
           <div className="hidden md:inline mx-1 ">
@@ -53,26 +55,44 @@ const Header = () => {
             </Button>
           </div>
           <div className="flex md:hidden">
-            <Button
-              size="sm"
-              variant="outline"
-              onClick={() => setMobileMenuOpen(true)}
-            >
-              <Bars3Icon className="h-6 w-6" aria-hidden="true" />
-            </Button>
+            <Popover>
+              <PopoverTrigger asChild>
+                <Button size="sm" variant="outline">
+                  <Bars3Icon className="h-6 w-6" aria-hidden="true" />
+                </Button>
+              </PopoverTrigger>
+              <PopoverContent className="w-40 mx-3 p-4">
+                <div className="grid gap-4">
+                  <div className="space-y-2">
+                    <ul>
+                      <li
+                        className={`mx-2 font-bold hover:opacity-75 ${poppins.className}`}
+                      >
+                        <Link href="/">Project</Link>
+                      </li>
+                      <li
+                        className={`mx-2 font-bold  hover:opacity-75 ${poppins.className}`}
+                      >
+                        <Link href="/">Skill</Link>
+                      </li>
+                      <li
+                        className={`mx-2 font-bold hover:opacity-75 ${poppins.className}`}
+                      >
+                        <Link href="/">Blogs</Link>
+                      </li>
+                      <li
+                        className={`mx-2 font-bold hover:opacity-75 ${poppins.className}`}
+                      >
+                        <Link href="/">Contact</Link>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </PopoverContent>
+            </Popover>
           </div>
         </div>
       </div>
-
-      <Dialog open={mobileMenuOpen} onClose={() => setMobileMenuOpen(false)} className="relative z-50">
-      <div className="fixed inset-0 flex w-screen items-center justify-center ">
-        <DialogPanel className="w-[100%] h-full bg-black">
-          <DialogTitle>Deactivate account order</DialogTitle>
-
-          {/* ... */}
-        </DialogPanel>
-      </div>
-    </Dialog>
     </header>
   );
 };
