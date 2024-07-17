@@ -22,23 +22,33 @@ const poppins = Poppins({
 
 const Header = () => {
   return (
-    <header>
-      <div className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
+    <header className="">
+      <div className=" mx-auto flex max-w-7xl items-center justify-between p-6  lg:px-8 ">
         <div className="flex">
           <div className={playfair.className}>
-            <h1 className="text-5xl font-black">ZS</h1>
+            <Link href="/">
+              <h1 className="text-5xl font-black">ZS</h1>
+            </Link>
           </div>
           <ul className="hidden md:flex my-4 mx-4">
-            <li className={`mx-2 font-bold ${poppins.className}`}>
+            <li
+              className={`mx-2 font-bold ${poppins.className} hover:text-blue-300`}
+            >
               <Link href="/">Projects</Link>
             </li>
-            <li className={`mx-2 font-bold ${poppins.className}`}>
+            <li
+              className={`mx-2 font-bold ${poppins.className} hover:text-blue-300`}
+            >
               <Link href="/">Skills</Link>
             </li>
-            <li className={`mx-2 font-bold ${poppins.className}`}>
+            <li
+              className={`mx-2 font-bold ${poppins.className} hover:text-blue-300`}
+            >
               <Link href="/">Blogs</Link>
             </li>
-            <li className={`mx-2 font-bold ${poppins.className}`}>
+            <li
+              className={`mx-2 font-bold ${poppins.className} hover:text-blue-300`}
+            >
               <Link href="/">Contact</Link>
             </li>
           </ul>
