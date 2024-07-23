@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Poppins } from "@next/font/google";
+import Link from "next/link";
 import React from "react";
 const poppins = Poppins({
   subsets: ["latin"],
@@ -17,7 +18,8 @@ function Contact() {
       </div>
       <div className="mt-4 md:flex-3 md:mt-0">
         <Button className="md:px-8 bg-white text-black font-bold hover:bg-gray-400 ">
-          Contact
+          <Link href="/contact"> Contact</Link>
+         
         </Button>
       </div>
     </div>

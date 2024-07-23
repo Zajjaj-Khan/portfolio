@@ -5,8 +5,8 @@ import { FaYoutube } from "react-icons/fa";
 import Link from "next/link";
 const Footer = () => {
   return (
-    <div>
-      <div className="flex w-full justify-center items-center p-6">
+    <div className="bottom-0 w-full max-h-screen">
+      <div className=" flex w-full justify-center items-center p-6">
         <div className="pr-6 cursor-pointer">
           <Link href={"https://github.com/Zajjaj-Khan"}>
             <FaGithub size={24} />

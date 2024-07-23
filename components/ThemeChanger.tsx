@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import { Sun } from "lucide-react";
-import { Moon } from "lucide-react";
+import { IoMoon } from "react-icons/io5";
 const ThemeChanger = () => {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
@@ -22,7 +22,7 @@ const ThemeChanger = () => {
         </button>
       ) : (
         <button onClick={() => setTheme("dark")}>
-          <Moon size={18} />
+         <IoMoon size={18}/>
         </button>
       )}
     </div>

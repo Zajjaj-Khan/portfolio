@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { Playfair_Display, Poppins } from "@next/font/google";
 import { Button } from "./ui/button";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import {
   Popover,
   PopoverContent,
@@ -19,10 +19,26 @@ const poppins = Poppins({
   subsets: ["latin"],
   weight: ["600"],
 });
+import { useAuth, SignInButton,  UserButton } from "@clerk/nextjs";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 const Header = () => {
+  const auth = useAuth();
   return (
-    <header className="">
+    <header className="fixed top-0 left-0 right-0 w-full backdrop-blur-sm z-10">
       <div className=" mx-auto flex max-w-7xl items-center justify-between p-6  lg:px-8 ">
         <div className="flex">
           <div className={playfair.className}>
@@ -34,7 +50,7 @@ const Header = () => {
             <li
               className={`mx-2 font-bold ${poppins.className} hover:text-blue-300`}
             >
-              <Link href="/">Projects</Link>
+              <Link href="/projects">Projects</Link>
             </li>
             <li
               className={`mx-2 font-bold ${poppins.className} hover:text-blue-300`}
@@ -49,7 +65,7 @@ const Header = () => {
             <li
               className={`mx-2 font-bold ${poppins.className} hover:text-blue-300`}
             >
-              <Link href="/">Contact</Link>
+              <Link href="/contact"> Contact</Link>
             </li>
           </ul>
         </div>
@@ -60,9 +76,11 @@ const Header = () => {
             </Button>
           </div>
           <div className="hidden md:inline mx-1 ">
-            <Button size="sm" variant="outline">
-              Sign In
-            </Button>
+            <Link href={"/sign-in"}>
+            {auth.isSignedIn? <UserButton afterSignOutUrl="/"/>:
+            <SignInButton/>
+            }
+            </Link>
           </div>
           <div className="flex md:hidden">
             <Popover>

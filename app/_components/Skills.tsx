@@ -16,7 +16,7 @@ const poppins = Poppins({
 export function IconCloudDemo() {
   return (
     
-    <div className="m-8 pl-8 relative opacity">
+    <div className="m-8 pl-8 relative">
       <SkillBackground/>
       <div>
       <h1 className={`text-3xl font-extrabold ${poppins.className}`}>Skills</h1>

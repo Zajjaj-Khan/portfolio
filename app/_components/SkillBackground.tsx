@@ -33,7 +33,7 @@ const slugs = [
 ];
 export function SkillBackground() {
   return (
-    <div className="hidden md:absolute md:flex h-full w-full items-center justify-center overflow-hidden rounded-lg border bg-background px-20 pb-20 pt-8 opacity-25">
+    <div className="hidden md:absolute md:flex h-full w-full items-center justify-center rounded-lg border bg-background px-20 pb-20 pt-8 opacity-25">`
       <IconCloud iconSlugs={slugs} />
     </div>
   );
