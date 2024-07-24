@@ -32,6 +32,7 @@ function HeroSection() {
           width={450}
           height={300}
           alt="Picture of the author"
+          priority
         />
       </div>
     </div>
