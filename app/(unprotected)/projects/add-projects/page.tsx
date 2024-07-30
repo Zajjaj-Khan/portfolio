@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import React from "react";
 import * as z from "zod";
 import axios from "axios";
@@ -64,6 +65,13 @@ export default function page() {
               )}
             />
             <div>
+            <Link href='/'>
+          <Button
+          type="button"
+          variant='ghost'
+          
+          >Cancel</Button>
+          </Link>
               <Button type="submit">Continue</Button>
             </div>
           </form>

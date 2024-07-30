@@ -12,8 +12,10 @@ model Project {
     id          String   @id @default(cuid())
     userId      String
     title       String   @db.Text
+    tagline     String?  @db.Text
     description String?  @db.Text
     imageUrl    String?  @db.Text
+    pin         Boolean  @default(false)
     Stack       Stack[]
     createdDate DateTime @default(now())
     updatedAt   DateTime @updatedAt
