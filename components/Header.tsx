@@ -19,23 +19,15 @@ const poppins = Poppins({
   subsets: ["latin"],
   weight: ["600"],
 });
-import { useAuth, SignInButton,  UserButton } from "@clerk/nextjs";
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+import {
+  useAuth,
+  SignInButton,
+  UserButton,
+  SignOutButton,
+} from "@clerk/nextjs";
 
 const Header = () => {
+  const { isSignedIn } = useAuth();
   const auth = useAuth();
   return (
     <header className="fixed top-0 left-0 right-0 w-full backdrop-blur-sm z-10">
@@ -55,12 +47,7 @@ const Header = () => {
             <li
               className={`mx-2 font-bold ${poppins.className} hover:text-blue-300`}
             >
-              <Link href="/">Skills</Link>
-            </li>
-            <li
-              className={`mx-2 font-bold ${poppins.className} hover:text-blue-300`}
-            >
-              <Link href="/">Blogs</Link>
+              <Link href="https://medium.com/@kzajjaj">Blogs</Link>
             </li>
             <li
               className={`mx-2 font-bold ${poppins.className} hover:text-blue-300`}
@@ -77,9 +64,11 @@ const Header = () => {
           </div>
           <div className="hidden md:inline mx-1 ">
             <Link href={"/sign-in"}>
-            {auth.isSignedIn? <UserButton afterSignOutUrl="/"/>:
-            <SignInButton/>
-            }
+              {auth.isSignedIn ? (
+                <UserButton afterSignOutUrl="/" />
+              ) : (
+                <SignInButton />
+              )}
             </Link>
           </div>
           <div className="flex md:hidden">
@@ -94,25 +83,33 @@ const Header = () => {
                   <div className="space-y-2">
                     <ul>
                       <li
-                        className={`mx-2 font-bold hover:opacity-75 ${poppins.className}`}
+                        className={`mx-2 my-2 font-bold hover:opacity-75 ${poppins.className}`}
                       >
-                        <Link href="/">Project</Link>
+                        <Link href="/projects">Project</Link>
                       </li>
                       <li
-                        className={`mx-2 font-bold  hover:opacity-75 ${poppins.className}`}
+                        className={`mx-2 my-2 font-bold hover:opacity-75 ${poppins.className}`}
                       >
-                        <Link href="/">Skill</Link>
+                        <Link href="https://medium.com/@kzajjaj">Blogs</Link>
                       </li>
                       <li
-                        className={`mx-2 font-bold hover:opacity-75 ${poppins.className}`}
+                        className={`mx-2 my-2 font-bold hover:opacity-75 ${poppins.className}`}
                       >
-                        <Link href="/">Blogs</Link>
+                        <Link href="/contact">Contact</Link>
                       </li>
-                      <li
-                        className={`mx-2 font-bold hover:opacity-75 ${poppins.className}`}
-                      >
-                        <Link href="/">Contact</Link>
-                      </li>
+                      {isSignedIn ? (
+                        <li
+                          className={`mx-2 font-bold hover:opacity-75 ${poppins.className}`}
+                        >
+                          <SignOutButton />
+                        </li>
+                      ) : (
+                        <li
+                          className={`mx-2 font-bold hover:opacity-75 ${poppins.className}`}
+                        >
+                          <SignInButton />
+                        </li>
+                      )}
                     </ul>
                   </div>
                 </div>
