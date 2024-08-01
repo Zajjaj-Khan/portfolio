@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en" suppressHydrationWarning>
-        <body className={inter.className}>
+        <body className={`md:mx-32 ${inter.className}`}>
           <ThemeProvider>
             <Header />
             <Providers>{children}</Providers>

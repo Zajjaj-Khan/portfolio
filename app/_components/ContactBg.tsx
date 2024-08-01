@@ -6,7 +6,7 @@ import ContactForm from "@/components/contact-form";
 
 export function ContactBg() {
   return (
-    <div className="absolute flex  w-full flex-col items-center justify-center rounded-lg bg-background">
+    <div className="sticky w-full flex  flex-col items-center justify-center rounded-lg bg-background">
      <ContactForm/>
       <GridPattern
         squares={[

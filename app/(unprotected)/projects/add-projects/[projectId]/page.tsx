@@ -9,7 +9,8 @@ import ImageForm from "./_components/ImageForm";
 import TaglineForm from "./_components/Tagline";
 import { SwitchForm } from "./_components/SwitchForm";
 import StackForm from "./_components/StackForm";
-
+import LiveLinkForm from "./_components/LiveLinkForm";
+import GithubLinkForm from "./_components/GithubLinkForm";
 async function CourseID({ params }: { params: { projectId: string } }) {
   const { userId } = auth();
 
@@ -53,6 +54,8 @@ async function CourseID({ params }: { params: { projectId: string } }) {
         <ImageForm initialData={project?.imageUrl} projectId={project?.id}/>
         <SwitchForm initialData={project?.pin} projectId={project?.id}/>
         <StackForm initialData={projects} projectId={project?.id}/>
+        <LiveLinkForm initialData={project?.liveLink} projectId={project?.id}/>
+        <GithubLinkForm initialData={project?.githubLink} projectId={project?.id}/>
       </div>
     </div>
   );

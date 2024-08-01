@@ -29,6 +29,8 @@ export default async function ProjectCard() {
                   .slice(0, 19)
                   .replace("T", " ")}
                 description={item?.description}
+                liveLink= {item?.liveLink}
+                githubLink= {item?.githubLink}
               />
             )}
             </>

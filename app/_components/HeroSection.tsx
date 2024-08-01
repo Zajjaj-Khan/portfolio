@@ -18,11 +18,8 @@ function HeroSection() {
           Hey, I am Zajjaj
           <span className="ml-3 text-xl text-blue-300">/ża-j-ja-j/</span>
         </h1>
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla ullam
-          ratione voluptatibus sit tenetur iste cumque dolores dicta,
-          repellendus autem accusantium distinctio veritatis vero labore
-          asperiores quae est velit nam.
+        <p className="text-slate-600 ">
+        Welcome to my digital nook. I'm a Full-Stack Developer and Computer Engineer from Pakistan. Here, I share what I've been working on recently and things I've learned along the way.
         </p>
       </div>
       <div>

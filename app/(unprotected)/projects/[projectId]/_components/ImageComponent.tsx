@@ -9,7 +9,7 @@ export default function ImageComponent({imageUrl}:ImageCompProps) {
   return (
     <Image
     src={imageUrl}
-    width={900}
+    width={600}
     height={400}
     alt="Picture of the author"
     className='rounded-lg'

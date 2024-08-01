@@ -8,15 +8,15 @@ const poppins = Poppins({
 });
 function Contact() {
   return (
-    <div className="p-4 pl-8 md:flex m-8 mx-24 md:p-8 border-gray-400  rounded-lg shadow-2xl bg-gradient-to-r from-[#3a6186] to-[#89253e]">
-      <div className="md:flex-1">
+    <div className="text-center  p-4 pl-8 lg:flex m-8 mx-24 lg:p-8 border-gray-400  rounded-lg shadow-2xl bg-gradient-to-r from-[#3a6186] to-[#89253e]">
+      <div className="lg:flex-1">
         <h1
-          className={`text-2xl md:p-2 md:ml-12 font-bold ${poppins.className} text-white`}
+          className={`text-2xl lg:p-2 lg:ml-12 font-bold ${poppins.className} text-white`}
         >
         Let's Build Something Amazing Together!
         </h1>
       </div>
-      <div className="mt-4 md:flex-3 md:mt-0">
+      <div className="mt-4 lg:flex-3 lg:mt-0">
         <Button className="md:px-8 bg-white text-black font-bold hover:bg-gray-400 ">
           <Link href="/contact"> Contact</Link>
          

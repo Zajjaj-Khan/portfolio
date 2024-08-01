@@ -35,11 +35,14 @@ export default async function page({
   const stacks = projects?.Stack;
   return (
     <div className="mt-28 mx-32">
-      <TitleComponent title={project?.title} />
+      <div className="mb-3">
+      <TitleComponent title={project?.title} liveLink={project?.liveLink} githubLink={project?.githubLink} />
       <TaglineComponent tagline={project?.tagline} />
-      <div className="h-[200px] flex md:h-[450px]">
+
+      </div>
+      <div className="h-[300px] flex md:h-[400px] ">
         <ImageComponent imageUrl={project?.imageUrl} />
-        <AnimatedList className="hidden  md:flex ml-3   p-6  w-64  rounded-lg" delay={1000}>
+        <AnimatedList className="hidden  md:flex ml-3   p-6  w-64  rounded-xl overflow-hidden h-72" delay={1000}>
           {stacks?.map((stack) => (
             <Stack stack={stack} />
           ))}

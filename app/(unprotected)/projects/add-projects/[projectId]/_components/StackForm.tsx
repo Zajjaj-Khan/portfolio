@@ -57,7 +57,7 @@ const StackForm = ({ initialData, projectId }: StackFormProps) => {
   };
   console.log(initialData.Stack)
   return (
-    <div className="mt-6 border bg-slate-100 rounded-md p-4">
+    <div className="mt-6 border rounded-md p-4   ">
       <div className="font-medium flex items-center justify-between">
         Tech Stack
         <Button onClick={toggleEdit} variant="ghost">

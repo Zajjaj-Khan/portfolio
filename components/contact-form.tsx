@@ -46,16 +46,16 @@ export default function ContactForm() {
       >
         Contact Form
       </h1>
-      <div className="w-full flex flex-col md:flex md:flex-row md:w-full">
+      <div className="w-full flex flex-col md:flex md:flex-row">
         <form
           onSubmit={handleSubmit(processForm)}
-          className="mx-auto flex flex-1 flex-col gap-4 sm:w-1/2 lg:w-1/3 md:w-full"
+          className=" flex flex-1 flex-col gap-4 sm:w-1/2 lg:w-1/3"
         >
-          <div className="flex flex-col md:flex md:flex-row md:w-full">
+          <div className="flex flex-col md:flex md:flex-row">
             <div>
               <label className="  z-10 ">Name*</label>
               <input
-                className="w-full rounded-lg py-2 mr-4  border-2 border-gray-500 bg-transparent md:w-full "
+                className="w-full rounded-lg py-2 mr-4  border-2 border-gray-500 bg-transparent"
                 {...register("name")}
               />
               {errors.name?.message && (
