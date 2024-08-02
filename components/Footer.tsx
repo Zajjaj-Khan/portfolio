@@ -25,8 +25,8 @@ const Footer = () => {
       </div>
       <div className="flex w-full justify-center items-center p-6">
         <p className="text-gray-400 text-sm">
-          {" "}
-          &copy; 2024 Zajjaj Bin Sana.All rights reserved{" "}
+          
+          &copy; 2024 Zajjaj Bin Sana.All rights reserved
         </p>
       </div>
     </div>

@@ -1,15 +1,25 @@
-"use client";
-import React from "react";
+"use client"
+import React,{useState,useEffect} from "react";
 import Image from "next/image";
+import { FaExternalLinkAlt } from "react-icons/fa";
 import { Poppins } from "@next/font/google";
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["600"],
 });
 import { useUser } from "@clerk/nextjs";
+import Link from "next/link";
 
 function HeroSection() {
-  const { user } = useUser();
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    return null;
+  }
 
   return (
     <div className="flex flex-col-reverse mt-28 mx-8 p-5 lg:flex lg:flex-row">
@@ -19,7 +29,10 @@ function HeroSection() {
           <span className="ml-3 text-xl text-blue-300">/ża-j-ja-j/</span>
         </h1>
         <p className="text-slate-600 ">
-        Welcome to my digital nook. I'm a Full-Stack Developer and Computer Engineer from Pakistan. Here, I share what I've been working on recently and things I've learned along the way.
+          Welcome to my digital nook. I&apos;m a Full-Stack Developer and Computer
+          Engineer from Pakistan. Here, I share what I&apos;ve been working on
+          recently and things I&apos;ve learned along the way.For detailed
+          information about my experience, please review my
         </p>
       </div>
       <div>

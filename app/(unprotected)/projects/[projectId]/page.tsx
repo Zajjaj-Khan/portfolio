@@ -1,5 +1,5 @@
 import { db } from "@/lib/db";
-import React from "react";
+import React, { Fragment } from "react";
 import Image from "next/image";
 import ImageComponent from "./_components/ImageComponent";
 import { AnimatedList } from "@/components/magicui/animated-list";
@@ -36,21 +36,31 @@ export default async function page({
   return (
     <div className="mt-28 mx-32">
       <div className="mb-3">
-      <TitleComponent title={project?.title} liveLink={project?.liveLink} githubLink={project?.githubLink} />
-      <TaglineComponent tagline={project?.tagline} />
-
+        <TitleComponent
+          title={project?.title}
+          liveLink={project?.liveLink}
+          githubLink={project?.githubLink}
+        />
+        <TaglineComponent tagline={project?.tagline} />
       </div>
-      <div className="h-[300px] flex md:h-[400px] ">
+      <div className="flex ">
         <ImageComponent imageUrl={project?.imageUrl} />
-        <AnimatedList className="hidden  md:flex ml-3   p-6  w-64  rounded-xl overflow-hidden h-72" delay={1000}>
+        <AnimatedList
+          className="hidden  lg:flex ml-3   p-6  w-64  rounded-xl overflow-hidden h-72"
+          delay={1000}
+        >
           {stacks?.map((stack) => (
-            <Stack stack={stack} />
+            <Fragment key={stack.id}>
+            <Stack stack={stack}  />
+            </Fragment>
           ))}
         </AnimatedList>
       </div>
+      <div>
       <DescriptionComponent description={project?.description} />
-      <div className="py-6 px-4 md:hidden shadow-sm">
-      <MobileStackList stacks={projects?.Stack} />
+      </div>
+      <div className="py-6 px-4 lg:hidden shadow-sm">
+        <MobileStackList stacks={projects?.Stack} />
       </div>
     </div>
   );

@@ -8,10 +8,11 @@ interface ImageCompProps{
 export default function ImageComponent({imageUrl}:ImageCompProps) {
   return (
     <Image
+    priority
     src={imageUrl}
-    width={600}
+    width={750}
     height={400}
-    alt="Picture of the author"
+    alt="Picture of the project"
     className='rounded-lg'
   />
   )

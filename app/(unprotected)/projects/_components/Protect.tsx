@@ -4,9 +4,8 @@ import { Button } from "@/components/ui/button";
 import React from "react";
 import { useUser } from "@clerk/clerk-react";
 
-
 export default function Protect() {
-    const { user, isSignedIn } = useUser();
+  const { user, isSignedIn } = useUser();
   const userId = user?.primaryEmailAddress?.emailAddress;
   let owner;
   if (userId === "kzajjaj@gmail.com") {
@@ -18,15 +17,15 @@ export default function Protect() {
   {
     if (!isSignedIn || isSignedIn) {
       return (
-       <>
+        <>
           {owner ? (
             <div className="flex mt-32 justify-end p-5">
-              <Link href="/projects/add-projects">
-                <Button>New Courses</Button>
-              </Link>
+              <Button>
+                <Link href="/projects/add-projects">New Project</Link>
+              </Button>
             </div>
           ) : null}
-    </>
+        </>
       );
     }
   }

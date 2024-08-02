@@ -1,6 +1,7 @@
+'use client'
 import { Button } from "@/components/ui/button";
 import { Ghost } from "lucide-react";
-import React, { useState } from "react";
+import React, { useState ,useEffect} from "react";
 import Link from "next/link";
 import { FaGithubAlt } from "react-icons/fa6";
 import { FaLink } from "react-icons/fa6";
@@ -15,28 +16,34 @@ export default function TitleComponent({
   liveLink,
   githubLink,
 }: TitleProp) {
-  
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    return null;
+  }
   return (
-    <div className="flex justify-between md:py-2 md:px-4 mb-4">
+    <div className="flex justify-between md:py-2 md:px-4 ">
       <h2 className="text-center md:text-left text-4xl font-bold ">{title}</h2>
-      <div className="flex items-end">
-        <Link href={liveLink==null?'#':liveLink}>
+      <div className="hidden md:flex items-end">
+       
           <Button size="sm" variant="secondary" disabled={liveLink == null}>
-            <span className="mx-2">
-              <FaLink />
-            </span>
+          <Link href={liveLink==null?'#':liveLink}>
             Live Link
+            </Link>
           </Button>
-        </Link>
       
-      <Link href={githubLink==null?'#':liveLink}>
+      
+     
         <Button size="sm" variant="secondary" disabled={githubLink == null} className="mx-3">
-          <span className="mx-2">
-          <FaGithubAlt />
-          </span>
+        <Link href={githubLink==null?'#':githubLink}>
           Github Link
+          </Link>
         </Button>
-      </Link>
+      
       </div>
     </div>
   );

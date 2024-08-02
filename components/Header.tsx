@@ -47,11 +47,6 @@ const Header = () => {
             <li
               className={`mx-2 font-bold ${poppins.className} hover:text-blue-300`}
             >
-              <Link href="https://medium.com/@kzajjaj">Blogs</Link>
-            </li>
-            <li
-              className={`mx-2 font-bold ${poppins.className} hover:text-blue-300`}
-            >
               <Link href="/contact"> Contact</Link>
             </li>
           </ul>
@@ -90,7 +85,7 @@ const Header = () => {
                       <li
                         className={`mx-2 my-2 font-bold hover:opacity-75 ${poppins.className}`}
                       >
-                        <Link href="https://medium.com/@kzajjaj">Blogs</Link>
+                        <Link href="/">Blogs</Link>
                       </li>
                       <li
                         className={`mx-2 my-2 font-bold hover:opacity-75 ${poppins.className}`}

@@ -36,7 +36,7 @@ export const StackList = ({
     }
     useEffect(()=>{
         setIsMounted(true)
-    })
+    },[])
 
     useEffect(()=>{
         setChapters(items)

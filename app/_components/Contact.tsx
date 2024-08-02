@@ -13,14 +13,17 @@ function Contact() {
         <h1
           className={`text-2xl lg:p-2 lg:ml-12 font-bold ${poppins.className} text-white`}
         >
-        Let's Build Something Amazing Together!
+        Let&apos;s Build Something Amazing Together!
         </h1>
       </div>
       <div className="mt-4 lg:flex-3 lg:mt-0">
+     
         <Button className="md:px-8 bg-white text-black font-bold hover:bg-gray-400 ">
-          <Link href="/contact"> Contact</Link>
-         
+        <Link href="/contact">
+          Contact
+          </Link>
         </Button>
+     
       </div>
     </div>
     

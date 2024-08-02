@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { db } from "@/lib/db";
 import ProjectItem from "./ProjectItem";
 import CardItems from "./CardItems";
@@ -16,9 +16,8 @@ export default async function ProjectCard() {
   return (
     <div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 ">
-
         {projects.map((item) => (
-            <>
+          <Fragment key={item.id}>
             {item.pin && (
               <CardItems
                 title={item.title}
@@ -29,13 +28,12 @@ export default async function ProjectCard() {
                   .slice(0, 19)
                   .replace("T", " ")}
                 description={item?.description}
-                liveLink= {item?.liveLink}
-                githubLink= {item?.githubLink}
+                liveLink={item?.liveLink}
+                githubLink={item?.githubLink}
               />
             )}
-            </>
-  
-))}
+          </Fragment>
+        ))}
       </div>
     </div>
   );

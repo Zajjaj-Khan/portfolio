@@ -1,6 +1,6 @@
 "use client";
 import { useRouter } from "next/navigation";
-import React from "react";
+import React,{useState,useEffect} from "react";
 import {
   Card,
   CardContent,
@@ -36,7 +36,7 @@ export default function CardItems({
   const onClick = () => {
     route.push(`/projects/${id}`);
   };
-
+  
   return (
     <div className="my-4 " onClick={onClick}>
       <Card className="shadow-lg rounded-2xl  hover:shadow-2xl cursor-pointer  ">
@@ -45,9 +45,8 @@ export default function CardItems({
           <CardDescription>{tagline}</CardDescription>
         </CardHeader>
         <CardContent className="hidden md:flex">
-          <p className="font-medium px-2">
-            {description?.substring(0, 150)} ...{" "}
-          </p>
+          <p> {description?.substring(0, 150)} </p>
+         
         </CardContent>
         <CardFooter className="flex justify-between">
           {liveLink != null ? (
@@ -65,8 +64,10 @@ export default function CardItems({
           {githubLink != null ? (
             <p className="font-medium hover:text-blue-300">
               <Link href={githubLink} className="flex">
+                
                 <SiGithubcopilot size={18} />
                 <span className="ml-2">Github Link</span>
+            
               </Link>
             </p>
           ) : (

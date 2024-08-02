@@ -3,7 +3,7 @@ interface StackList{
     stacks:any;
 }
 export default function MobileStackList({stacks}:StackList) {
-    console.log(stacks)
+   
   return (
     <div className='mb-8'>
         <h3 className='text-lg font-bold py-4'>Tech Stack Used</h3>

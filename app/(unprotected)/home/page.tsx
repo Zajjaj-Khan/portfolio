@@ -1,10 +1,12 @@
-import React from "react";
+
+import React,{useEffect,useState} from "react";
 import Image from "next/image";
 import {IconCloudDemo} from "@/app/_components/Skills"
 import HeroSection from "@/app/_components/HeroSection";
 import  Contact from "@/app/_components/Contact";
 import Project from "@/app/_components/projects/Project";
 const HomePage = () => {
+
   return (
    <div>
     <HeroSection/>
