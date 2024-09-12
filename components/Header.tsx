@@ -1,8 +1,7 @@
 "use client";
 import React, { useState } from "react";
-import { cn } from "@/lib/utils";
 import Link from "next/link";
-import { Playfair_Display, Poppins } from "@next/font/google";
+import { Playfair_Display, Poppins } from "next/font/google";
 import { Button } from "./ui/button";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import {
@@ -58,13 +57,15 @@ const Header = () => {
             </Button>
           </div>
           <div className="hidden md:inline mx-1 ">
-            <Link href={"/sign-in"}>
-              {auth.isSignedIn ? (
-                <UserButton afterSignOutUrl="/" />
-              ) : (
-                <SignInButton />
-              )}
-            </Link>
+            {auth.isSignedIn ? (
+              <UserButton afterSignOutUrl="/" />
+            ) : (
+
+              <SignInButton>
+                <Link href='/sign-in'>Sign In
+                </Link>
+              </SignInButton>
+            )}
           </div>
           <div className="flex md:hidden">
             <Popover>
